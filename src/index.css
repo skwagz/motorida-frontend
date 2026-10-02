@@ -1,0 +1,93 @@
+@import "tailwindcss";
+@import "@fontsource-variable/bricolage-grotesque";
+@import "@fontsource-variable/jetbrains-mono";
+
+/* One accent (hi-vis vest orange), one neutral family, auto light/dark.
+   Shape rule: images + panels 16px, buttons + chips full pill. */
+:root {
+  --bg: #f3f4f1;
+  --surface: #fbfbf9;
+  --sunk: #e8eae5;
+  --ink: #131513;
+  --muted: #565b56;
+  --line: rgb(19 21 19 / 0.12);
+  --accent: #e4572e;
+  --accent-ink: #131513;
+  --phone: #1c1f1c;
+  --lcd: #c9d4b8;
+  --lcd-ink: #1d2618;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0e100e;
+    --surface: #161916;
+    --sunk: #1d211d;
+    --ink: #ecede8;
+    --muted: #a1a69f;
+    --line: rgb(236 237 232 / 0.12);
+    --accent: #f0683f;
+    --accent-ink: #131513;
+    --phone: #262a26;
+    color-scheme: dark;
+  }
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-sunk: var(--sunk);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --color-accent-ink: var(--accent-ink);
+  --color-phone: var(--phone);
+  --color-lcd: var(--lcd);
+  --color-lcd-ink: var(--lcd-ink);
+  --font-sans: "Bricolage Grotesque Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono Variable", ui-monospace, monospace;
+  --ease-out-strong: cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+/* Press feedback for anything pressable. Hover motion only on real pointers. */
+.press {
+  transition: transform 140ms var(--ease-out-strong), background-color 200ms ease, color 200ms ease;
+}
+.press:active {
+  transform: scale(0.97);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .press:active {
+    transform: none;
+  }
+}
