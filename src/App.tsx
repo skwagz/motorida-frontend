@@ -16,7 +16,7 @@ import { Reveal } from './components/Reveal'
 
 // Placeholders, swap before sharing widely.
 const CONTACT = 'mailto:hello@motorida.co.ke'
-const REPO = 'https://github.com/skwagz/motorida-backend'
+const REPO = 'https://github.com/skwagz/motorida-frontend' // backend repo is private, available on request
 
 const ease = [0.23, 1, 0.32, 1] as const
 

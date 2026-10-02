@@ -20,7 +20,7 @@ small in-memory store, so visitors can place an order or take a rider job.
 | Contact email `hello@motorida.co.ke` | `CONTACT` in `src/App.tsx` |
 | USSD code `*384*7426#` | `DEMO_CODE` in `src/ussd.ts` |
 | Rider/business names, plate, `0711 000 000` | `src/ussd.ts` |
-| Repo link (must be public for visitors) | `REPO` in `src/App.tsx` |
+| Repo link (points to this repo; backend is private) | `REPO` in `src/App.tsx` |
 | Logo (simple M mark) | `public/favicon.svg` |
 
 ## Numbers on the page
